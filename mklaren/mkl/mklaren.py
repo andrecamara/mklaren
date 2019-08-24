@@ -107,7 +107,7 @@ class Mklaren:
 
         # Perform lookahead Cholesky steps for each kernel
         if self.debug:
-            print "=== Start of the lookahead steps ==="
+            print("=== Start of the lookahead steps ===")
 
         for pi in xrange(no_kernels):
             # Pass by reference
@@ -132,7 +132,7 @@ class Mklaren:
 
         # Start main loop
         if self.debug:
-            print "=== Start of main loop ==="
+            print("=== Start of main loop ===")
 
         # Global input space and list of kernels corresponding to each column
         # Note the columns have been augmented and the corresponding transform
@@ -160,7 +160,7 @@ class Mklaren:
                                                        lbd=lbd,
                                                        xk=xk)
             if self.debug:
-                print "Best kernel, pivot: %d, %d" % (best_pi, best_i)
+                print("Best kernel, pivot: %d, %d" % (best_pi, best_i))
 
             # Load data for selected kernel
             # Make sure this is passed as a reference (updated in the process)
@@ -411,7 +411,7 @@ class Mklaren:
 
             # Exclude zeros correlations
             if self.debug:
-                print "Kernel:%d, step:%d, max:%f" % (pi, k, max(c_vec))
+                print("Kernel:%d, step:%d, max:%f" % (pi, k, max(c_vec))
             if max(absolute(c_vec)) > tol:
                 gamma, pivot = self.gradient(X=Xa, bisec=bisec,
                                              A=A, residual=residual,
