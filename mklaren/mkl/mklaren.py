@@ -411,7 +411,7 @@ class Mklaren:
 
             # Exclude zeros correlations
             if self.debug:
-                print("Kernel:%d, step:%d, max:%f" % (pi, k, max(c_vec))
+                print("Kernel:%d, step:%d, max:%f" % (pi, k, max(c_vec)))
             if max(absolute(c_vec)) > tol:
                 gamma, pivot = self.gradient(X=Xa, bisec=bisec,
                                              A=A, residual=residual,
