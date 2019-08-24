@@ -6,7 +6,7 @@ Kernel alignment based on kernel Ridge regression. The kernels are not assumed t
     1. C. Cortes, L-2 Regularization for Learning Kernels. UAI (2009).
 
 """
-from align import Align
+from mklaren.mkl.align import Align
 from numpy import ones, zeros, eye, array, hstack, sqrt
 from numpy.linalg import inv, norm
 from ..util.la import woodbury_inverse
