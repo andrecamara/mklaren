@@ -53,10 +53,13 @@ class Align:
         :param holdout: (``list``) List of indices to exlude from alignment.
         """
         q = self.d
-        m = len(y)
         mu = zeros((len(Ks), ))
-        y = y.reshape((m, 1))
-
+        if y.ndim < 2:
+            m = len(y)
+            y = y.reshape((m, 1))
+        else:
+            m = y.shape[0]
+            
         # Generalization to Kinterfaces
         Ks = [K[:, :] for K in Ks]
 
